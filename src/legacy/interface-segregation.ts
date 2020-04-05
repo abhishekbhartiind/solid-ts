@@ -25,10 +25,10 @@ export class Car implements VehicleInterface {
 
 export class Airplane implements VehicleInterface {
   public drive() : string {
-      throw new Error('Not implemented method.');
+    throw new Error('Not implemented method.');
   }
   
   public fly() : string {
-      return 'Flying Airplane.';
+    return 'Flying Airplane.';
   }
 }

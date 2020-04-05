@@ -7,7 +7,7 @@ export class Rectangle {
     this.height = height;
   }
 
-  public getLength() : number {
+  public getHeight() : number {
     return this.height; 
   }
 
@@ -23,15 +23,15 @@ export class Square {
     this.height = height;
   }
 
-  public getLength() : number {
+  public getHeight() : number {
     return this.height; 
   }
 }
 
 export class AreaCalculator {
-  private shapes: Square[]|Rectangle[];
+  private shapes: any[];
 
-  constructor(shapes: Square[]|Rectangle[]) {
+  constructor(shapes: any[]) {
     this.shapes = shapes;
   }
 
@@ -40,10 +40,10 @@ export class AreaCalculator {
 
     this.shapes.forEach(shape => {
       if (shape instanceof Square) {
-        area += Math.pow(shape.getLength(), 2);
+        area += Math.pow(shape.getHeight(), 2);
       }
       if (shape instanceof Rectangle) {
-        area += shape.getLength() * shape.getWidth();
+        area += shape.getHeight() * shape.getWidth();
       }
     });
 

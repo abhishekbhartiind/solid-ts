@@ -1,4 +1,4 @@
-# SOLID principles using Typescript
+# SOLID Principles using Typescript
 
 A little demo of SOLID principles using Typescript.
 
@@ -23,10 +23,6 @@ $ npm run test
 ```bash
 $ npm run test:coverage
 ```
-
-## TODO
-
-* Add tests for legacy code.
 
 ## Author
 
