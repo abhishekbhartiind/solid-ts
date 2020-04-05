@@ -2,6 +2,8 @@
 
 A little demo of SOLID principles using Typescript.
 
+## Introduction
+
 In the `legacy` directory, you will find implementations wiht problems. In the `refactor` directory, you will find some refactorings applying SOLID principles.
 
 ## Setup
