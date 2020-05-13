@@ -36,17 +36,14 @@ export class AreaCalculator {
   }
 
   public sum() {
-    let area = 0;
-
-    this.shapes.forEach(shape => {
+    return this.shapes.reduce((acc, shape) => {
       if (shape instanceof Square) {
-        area += Math.pow(shape.getHeight(), 2);
+        acc += Math.pow(shape.getHeight(), 2);
       }
       if (shape instanceof Rectangle) {
-        area += shape.getHeight() * shape.getWidth();
+        acc += shape.getHeight() * shape.getWidth();
       }
-    });
-
-    return area;
+      return acc;
+    }, 0);
   }
 }
