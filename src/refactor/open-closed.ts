@@ -36,12 +36,7 @@ export class AreaCalculator {
   }
 
   public sum() : number {
-    let area = 0;
-
-    this.shapes.forEach(shape => {
-      area += shape.area();
-    });
-
-    return area;
+    return this.shapes
+      .reduce((acc, shape) => acc += shape.area(), 0);
   }
 }
