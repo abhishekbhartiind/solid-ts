@@ -10,7 +10,7 @@ export class MemoryStorage {
   }
 }
 
-export class Post {
+export class PostService {
   private db = new MemoryStorage();
 
   createPost(title: string) {

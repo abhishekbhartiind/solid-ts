@@ -1,9 +1,9 @@
-import { MemoryStorage, Post } from '../../src/legacy/dependency-inversion';
+import { MemoryStorage, PostService } from '../../src/legacy/dependency-inversion';
 
 describe('Testing Dependency Inversion principle violation.', () => {
   it('Testing post insertion.', () => {
-    const post = new Post();
+    const postService = new PostService();
 
-    post.createPost('test');
+    postService.createPost('test');
   });
 });

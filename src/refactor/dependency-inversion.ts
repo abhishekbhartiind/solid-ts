@@ -19,7 +19,7 @@ export class MemoryStorage implements DatabaseStorage {
   }
 }
 
-export class Post {
+export class PostService {
   private db : DatabaseStorage;
 
   constructor(db: DatabaseStorage) {
