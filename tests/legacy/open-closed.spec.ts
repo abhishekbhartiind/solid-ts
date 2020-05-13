@@ -15,8 +15,8 @@ describe('Testing Open-Closed principle violation.', () => {
   });
 
   it('Testing AreaCalculator sum.', () => {
-    const expectedSquareArea = Math.pow(square.getHeight(), 2);
-    const expectedRectangleArea = rectangle.getHeight() * rectangle.getWidth();
+    const expectedSquareArea = Math.pow(square.height, 2);
+    const expectedRectangleArea = rectangle.height * rectangle.width;
 
     const expected = expectedSquareArea + expectedRectangleArea;
 

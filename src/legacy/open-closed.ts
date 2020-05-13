@@ -1,30 +1,20 @@
 export class Rectangle {
-  private width: number;
-  private height: number;
+  constructor(private _width: number, private _height: number) {}
 
-  constructor(width: number, height: number) {
-    this.width = width;
-    this.height = height;
+  get height(): number {
+    return this._height; 
   }
 
-  public getHeight() : number {
-    return this.height; 
-  }
-
-  public getWidth() : number {
-    return this.width;
+  get width(): number {
+    return this._width;
   }
 }
 
 export class Square {
-  private height: number;
+  constructor(private _height: number) {}
 
-  constructor(height: number) {
-    this.height = height;
-  }
-
-  public getHeight() : number {
-    return this.height; 
+  get height(): number {
+    return this._height; 
   }
 }
 
@@ -38,10 +28,10 @@ export class AreaCalculator {
   public sum() {
     return this.shapes.reduce((acc, shape) => {
       if (shape instanceof Square) {
-        acc += Math.pow(shape.getHeight(), 2);
+        acc += Math.pow(shape.height, 2);
       }
       if (shape instanceof Rectangle) {
-        acc += shape.getHeight() * shape.getWidth();
+        acc += shape.height * shape.width;
       }
       return acc;
     }, 0);
