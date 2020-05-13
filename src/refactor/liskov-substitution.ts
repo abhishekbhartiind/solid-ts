@@ -3,27 +3,17 @@ export interface Shape {
 }
 
 export class Rectangle implements Shape {
-  private width: number;
-  private length: number;
-
-  constructor(width: number, length: number) {
-    this.width = width;
-    this.length = length;
-  }
+  constructor(private _width: number, private _height: number) {}
 
   public area() : number {
-    return this.length * this.width;
+    return this._height * this._width;
   }
 }
 
 export class Square implements Shape {
-  private length: number;
-
-  constructor(length: number) {
-    this.length = length;
-  }
+  constructor(private _height: number) {}
 
   public area() : number {
-    return Math.pow(this.length, 2);
+    return Math.pow(this._height, 2);
   }
 }

@@ -1,14 +1,8 @@
 export class Rectangle {
-  private width: number;
-  private height: number;
-
-  constructor(width: number, height: number) {
-    this.width = width;
-    this.height = height;
-  }
+  constructor(private _width: number, private _height: number) {}
 
   public area() : number {
-    return this.height * this.width;
+    return this._height * this._width;
   }
 }
 
