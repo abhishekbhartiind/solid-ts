@@ -1,17 +1,17 @@
-export class User {
-  private email : string;
+export class Book {
+  constructor(private _author: string, private _title: string) {}
 
-  public getEmail() : string {
-    return this.email;
+  get author(): string {
+    return this._author;
   }
 
-  public setEmail(email: string) : User {
-    this.email = email;
-    
-    return this;
+  get title(): string {
+    return this._title;
   }
 
-  public store() {
-    return `Storing user: ${ this.getEmail() }`;
+  // Here goes the code to store in the database
+  // I'm returning a string for testing.
+  save(): string {
+    return `Saving ${ this.title } by ${ this.author }`;
   }
 }

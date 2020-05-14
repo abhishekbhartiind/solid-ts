@@ -1,13 +1,11 @@
-import { User } from '../../src/legacy/single-responsibility';
+import { Book } from '../../src/legacy/single-responsibility';
 
 describe('Testing Single Responsibility principle violation.', () => {
-  it('Testing store method from User class.', () => {
-    const expectedValue = 'test@testing.com';
+  it('Testing save method from Book class.', () => {
+    const book = new Book('Stephen King', 'IT');
 
-    const user = new User();
-    user.setEmail(expectedValue);
-
-    expect(user.getEmail()).toBe(expectedValue);
-    expect(user.store()).toBe(`Storing user: ${expectedValue}`);
+    expect(book.author).toBe('Stephen King');
+    expect(book.title).toBe('IT');
+    expect(book.save()).toBe(`Saving IT by Stephen King`);
   });
 });

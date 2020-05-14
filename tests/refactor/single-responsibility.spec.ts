@@ -1,23 +1,19 @@
-import { User, UserDB } from '../../src/refactor/single-responsibility';
+import { Book, BookRepository } from '../../src/refactor/single-responsibility';
 
 describe('Testing Single Responsibility principle.', () => {
-  it('Testing User class.', () => {
-    const expectedValue = 'test@testing.com';
+  it('Testing book creation.', () => {
+    const book = new Book('Stephen King', 'Carrie');
 
-    const user = new User();
-    user.setEmail(expectedValue);
-
-    expect(user.getEmail()).toBe(expectedValue);
+    expect(book.title).toBe('Carrie');
+    expect(book.author).toBe('Stephen King');
   });
 
-  it('Testing UserDB class.', () => {
-    const expectedValue = 'test@testing.com';
+  it('Testing BookRepository class.', () => {
+    const book = new Book('Stephen King', 'IT');
+    const bookRepository = new BookRepository<Book>();
 
-    const user = new User();
-    user.setEmail(expectedValue);
-
-    const userDB = new UserDB();
-
-    expect(userDB.store(user)).toBe(`Storing user: ${expectedValue}`);
+    expect(book.title).toBe('IT');
+    expect(book.author).toBe('Stephen King');
+    expect(bookRepository.save(book)).toBe('Saving IT by Stephen King');
   });
 });

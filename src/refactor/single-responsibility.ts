@@ -1,19 +1,23 @@
-export class User {
-  private email : string;
+export class Book {
+  constructor(private _author: string, private _title: string) {}
 
-  public getEmail() : string {
-    return this.email;
+  get author(): string {
+    return this._author;
   }
 
-  public setEmail(email: string) : User {
-    this.email = email;
-    
-    return this;
+  get title(): string {
+    return this._title;
   }
 }
 
-export class UserDB {
-  public store(user: User) : string {
-    return `Storing user: ${ user.getEmail() }`;
+export interface RepositoryInterface<T> {
+  save(entity: T): string;
+}
+
+export class BookRepository<T extends Book> implements RepositoryInterface<T> {
+  // Here goes the code to store in the database
+  // I'm returning a string for testing.
+  save(book: T): string {
+    return `Saving ${ book.title } by ${ book.author }`;
   }
 }
